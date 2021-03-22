@@ -18,5 +18,6 @@ export const store = new Vuex.Store({
         changelist(state, payload) {
             state.todoitems[payload.index].status = payload.change.status
         }
+
     }
 });
