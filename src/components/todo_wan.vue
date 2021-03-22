@@ -5,7 +5,7 @@
     </ul>
     <div v-for="(value,index) in todoLists" :key="index">
       <ul class="ulcss" v-if="value.status">
-        <li></li>
+        <li>{{value.status}}</li>
         <li>{{ todoLists.length-index }}</li>
         <li @click="changelist(index)">{{ value.title }}</li>
         <li>{{ value.date }}</li>
@@ -19,11 +19,6 @@ import {mapMutations, mapGetters} from "vuex";
 
 export default {
   name: "todo_wan",
-  data() {
-    return {
-      isActive: false
-    }
-  },
   computed: {
     ...mapGetters({
       todoLists: 'todoLists',

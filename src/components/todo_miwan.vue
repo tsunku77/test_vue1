@@ -11,7 +11,7 @@
     </ul>
     <div v-for="(value,index) in todoLists" :key="index">
       <ul class="ulcss" v-if="!value.status">
-        <li><input type="checkbox" @click="ck_click(index)" v-model="value.checked"></li>
+        <li>{{value.status}}</li>
         <li>{{ todoLists.length - index }}</li>
         <li @click="changelistM(index)">{{ value.title }}</li>
         <li>{{ value.date }}</li>
@@ -37,10 +37,6 @@ export default {
     }),
     changelistM(index){
       this.changelist( {change : {...this.todoLists[index], status:true}, index : index } )
-
-
-
-
     }
   }
 }
