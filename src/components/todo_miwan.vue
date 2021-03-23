@@ -12,7 +12,7 @@
     <div v-for="(value,index) in todoLists" :key="index">
       <ul class="ulcss" v-if="!value.status">
         <li>{{value.status}}</li>
-        <li>{{ todoLists.length - index }}</li>
+        <li>{{todoLists.length-index }}</li>
         <li @click="changelistM(index)">{{ value.title }}</li>
         <li>{{ value.date }}</li>
       </ul>
@@ -37,7 +37,7 @@ export default {
     }),
     changelistM(index){
       this.changelist( {change : {...this.todoLists[index], status:true}, index : index } )
-    }
+    },
   }
 }
 </script>

@@ -7,7 +7,7 @@
       <ul class="ulcss" v-if="value.status">
         <li>{{value.status}}</li>
         <li>{{ todoLists.length-index }}</li>
-        <li @click="changelist(index)">{{ value.title }}</li>
+        <li @click="changelistM(index)">{{ value.title }}</li>
         <li>{{ value.date }}</li>
       </ul>
     </div>
@@ -29,6 +29,9 @@ export default {
       ck_click: 'ck_click',
       changelist: 'changelist'
     }),
+    changelistM(index){
+      this.changelist( {change : {...this.todoLists[index], status:false}, index : index } )
+    },
   }
 }
 </script>

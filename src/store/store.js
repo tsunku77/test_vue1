@@ -15,9 +15,8 @@ export const store = new Vuex.Store({
         add_btn(state, payload) { //payload = 입력값(배열)
             state.todoitems = [payload, ...state.todoitems]
         },
-        changelist(state, payload) {
-            state.todoitems[payload.index].status = payload.change.status
+        changelist(state, payload) { //payload = 분기바뀐 배열을 받음
+            state.todoitems[payload.index].status = payload.change.status // true false를 구분
         }
-
     }
 });
